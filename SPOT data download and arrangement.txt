@@ -1,0 +1,12 @@
+The website provide multiple datasets https://land.copernicus.eu/global/
+To download data is quite easy:
+(1) select the specific datasets that you need (note: there are different sensor data and different resolution)
+(2) by click the superlink under the Access column, enter the datapool
+(3) register your own account
+(4) select the data you need by date, extent, format, layer, etc....(note Geotiff can exact the extent by enter the country name)
+(5) after the data request is submitted, wait until it show completed
+(6) !!!!download data is quite easy by using FTP software FileZilla (a free software)
+
+Very first steps to arrange the huge datasets ( it looks a little complex, 'cause the data was packed into .zip):
+(1) Ctrl-A select all .zip folders, and then right-click unpack these .zip
+(2) search " .tiff" in the Windows system search function
