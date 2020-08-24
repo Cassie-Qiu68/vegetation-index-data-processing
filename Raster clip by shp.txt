@@ -1,0 +1,21 @@
+###run in ArcGIS
+
+import arcpy
+from arcpy import env
+#栅格文件路径
+env.workspace = "F:/Dataset/SPOT-NDVI/LAI-single"
+#获取文件下所有tif格式文件
+rasterList = arcpy.ListRasters("*","tiff")
+ 
+#裁剪的shapefile文件
+mask = "F:/Grassland/Data/Temperate_grassland.shp"
+ 
+#输出路径
+output_path = "F:/Dataset/SPOT-NDVI/LAI_exact"
+ 
+#循环读取文件名
+for raster in rasterList:
+    print raster
+    out = output_path + raster[0:-4] + "_NL" + ".tif" #对生成文件进行命名
+    arcpy.Clip_management(raster,"#",out,mask,"0","ClippingGeometry")
+    print out+" clip has done!"

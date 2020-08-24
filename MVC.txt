@@ -1,0 +1,29 @@
+###MVC for 10-day LAI
+###run in arcpy of ArcGIS
+
+import arcpy
+import time
+arcpy.CheckOutExtension("spatial")
+time1=time.strftime('%y-%m-%d-%H:%M:%S')
+Sname1="F:\\Dataset\\SPOT-NDVI\\LAI_exact\\tif\\LAI_exact_"   ## foldername
+Sname2=".tif"  ##fixed part of the file name
+for  i in range(1999,2020):
+    for j in range(1,13):
+        if j<10:
+            Year= str(i)+"0"+str(j)
+        else:
+            Year= str(i)+str(j)
+        print (Sname1+Year+"1"+Sname2)
+        print (Sname1+Year+"2"+Sname2)
+        print (Sname1+Year+"3"+Sname2)
+        out="F:\\Dataset\\SPOT-NDVI\\LAI_exact_MVC\\MVC"+Year[0:6]+".tif"
+        print out +" is being ........."
+        arcpy.gp.CellStatistics_sa((Sname1+Year+"1"+Sname2,Sname1+Year+"2"+Sname2,Sname1+Year+"3"+Sname2) ,out, "MAXIMUM", "DATA")
+##depend on how many data per month
+        print out +" has done.........."
+        print "-------------------------------------------------------"
+print "<----------All are done !!!---------->"
+print "Start time : "+time1
+print "End   time : "+time.strftime('%y-%m-%d-%H:%M:%S')
+
+###Reference to :https://blog.csdn.net/weixin_30561425/article/details/95313858
