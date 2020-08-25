@@ -1,0 +1,20 @@
+###get all names within folder:
+#获取所有名称
+DIR *.*  /B >LIST.TXT
+
+#选取特定类型文件，获取名称
+@echo off
+
+set /p fileType=请输入要提取的文件类型(如mp3):
+
+if "%filetype%"=="" (set fileType=*)
+
+dir /a-d /b "*.%filetype%" > fetched.txt
+
+echo 文件名整理完成
+
+pause
+
+
+###batch change name within a folder:
+ren "oldname" "newname" 
