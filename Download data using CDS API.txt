@@ -1,0 +1,23 @@
+https://cds.climate.copernicus.eu/cdsapp#!/home
+This website contains multiple spatial datasets from satellite observations.
+Download the datasets through API is quite easy! Here is a step-by-step introduction:
+(1)Select your target datasets 
+(2)Click "Download data" button and get your own options be click relevant list
+(3)Then click Show API request, copy the code into Python. 
+Before using API request, you need to install it on Windows, there is a official guide :
+https://confluence.ecmwf.int/display/CKB/How+to+install+and+use+CDS+API+on+Windows
+
+(1)For Anaconda installed:
+open Anaconda Prompt and type:
+conda config --add channels conda-forge
+conda install cdsapi
+
+
+(2) Register or login in your own account in the CDS website
+(3) Create a file: (a) You can create a .txt file first and copy a two lines code in this file; (https://cds.climate.copernicus.eu/api-how-to)
+                          (b) put it into the windows environment,usually located at C:\Users\Username folder
+                          (c) rename the file as ".cdsapirc" (NOTE:THIS IS THE FULLNAME OF THIS FILE, THERE IS NO OTHER SUFFIX)
+(4) Install the API by using CMD code:
+depend on you python version:
+pip install cdsapi # for Python 2.7
+pip3 install cdsapi # for Python 3
