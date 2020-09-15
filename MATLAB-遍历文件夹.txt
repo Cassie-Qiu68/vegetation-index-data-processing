@@ -1,0 +1,14 @@
+ 
+date = importdata("I:\Grassland\Data\bfast01_result_NDVI\type3_date-new.tif");
+[m,n]=size(date)
+
+%读取文件夹中所有tif并转化为三位矩阵
+k=1
+for mon=1:168
+     filename=['I:\Grassland\Data\BA_1km-ex\2002-2016\MCD64',int2str(mon),'.tif']
+     firedata=importdata(filename);
+     firedata=reshape(firedata,m*n,1);
+     firedatasum(:,k)=firedata; %储存所有的频次
+     k=k+1
+end
+
