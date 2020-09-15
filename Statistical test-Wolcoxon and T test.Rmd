@@ -1,0 +1,100 @@
+---
+title: "wolcoxon test and t test"
+author: "QIU Sijing"
+date: "2020Äê9ÔÂ8ÈÕ"
+output: html_document
+---
+
+###scene1
+```{r}
+group1 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group1_scene5.csv',header=F,sep='')
+group2 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group2_scene5.csv',header=F,sep='')
+data <- data.frame(group1,group2)
+
+wilcox.test(data$V1,data$V1.1,paired=TRUE)
+t.test(data$V1,data$V1.1,paired=TRUE)
+```
+###scene1
+```{r}
+group1 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group1_scene5_one.csv',header=F,sep='')
+group2 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group2_scene5_one.csv',header=F,sep='')
+data <- data.frame(group1,group2)
+library(stats)
+wilcox.test(data$V1,data$V1.1,paired=TRUE)
+t.test(data$V1,data$V1.1,paired=TRUE)
+```
+
+
+
+## scene2
+
+```{r}
+scene2_group1 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group1_scene6.csv',header=F,sep='')
+scene2_group2 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group2_scene6.csv',header=F,sep='')
+data_scene2 <- data.frame(scene2_group1 ,scene2_group2 )
+
+
+wilcox.test(data_scene2$V1,data_scene2$V1.1,paired=TRUE)
+t.test(data_scene2$V1,data_scene2$V1.1,paired=TRUE)
+
+```
+## scene2
+
+```{r}
+scene2_group1 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group1_scene6_one.csv',header=F,sep='')
+scene2_group2 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group2_scene6_one.csv',header=F,sep='')
+data_scene2 <- data.frame(scene2_group1 ,scene2_group2 )
+
+
+wilcox.test(data_scene2$V1,data_scene2$V1.1,paired=TRUE)
+t.test(data_scene2$V1,data_scene2$V1.1,paired=TRUE)
+
+```
+
+
+
+## scene3
+```{r}
+
+scene3_group1 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group1_scene7.csv',header=F,sep='')
+scene3_group2 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group2_scene7.csv',header=F,sep='')
+data_scene3 <- data.frame(scene3_group1 ,scene3_group2 )
+
+wilcox.test(data_scene3$V1,data_scene3$V1.1,paired=TRUE)
+t.test(data_scene3$V1,data_scene3$V1.1,paired=TRUE)
+
+```
+## scene3
+```{r}
+
+scene3_group1 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group1_scene7_one.csv',header=F,sep='')
+scene3_group2 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group2_scene7_one.csv',header=F,sep='')
+data_scene3 <- data.frame(scene3_group1 ,scene3_group2 )
+
+wilcox.test(data_scene3$V1,data_scene3$V1.1,paired=TRUE)
+t.test(data_scene3$V1,data_scene3$V1.1,paired=TRUE)
+
+```
+
+
+## scene4
+```{r}
+scene4_group1 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group1_scene8.csv',header=F,sep='')
+scene4_group2 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group2_scene8.csv',header=F,sep='')
+data_scene4 <- data.frame(scene4_group1 ,scene4_group2 )
+
+wilcox.test(data_scene4$V1,data_scene4$V1.1,paired=TRUE)
+t.test(data_scene4$V1,data_scene4$V1.1,paired=TRUE)
+
+```
+## scene4
+```{r}
+scene4_group1 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group1_scene8_one.csv',header=F,sep='')
+scene4_group2 <- read.csv('I:\\Grassland\\Results\\Burnt_area\\group2_scene8_one.csv',header=F,sep='')
+data_scene4 <- data.frame(scene4_group1 ,scene4_group2 )
+
+wilcox.test(data_scene4$V1,data_scene4$V1.1,paired=TRUE)
+t.test(data_scene4$V1,data_scene4$V1.1,paired=TRUE)
+
+```
+
