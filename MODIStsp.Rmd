@@ -1,7 +1,7 @@
 ---
 title: "MODIStsp_use"
 author: "QIU Sijing"
-date: "2020Äê9ÔÂ8ÈÕ"
+date: "2020å¹´9æœˆ8æ—¥"
 output: html_document
 ---
 Any MODIS data can be obtained data access and official document by this website: 
@@ -9,10 +9,10 @@ https://modis.gsfc.nasa.gov/data/
 
 Here are some convenient way to download and pre-processing data:
 
-##Method1£ºÀûÓÃR MODIStsp°üµÄGUI½çÃæÏÂÔØ
+##Method1ï¼šåˆ©ç”¨R MODIStspåŒ…çš„GUIç•Œé¢ä¸‹è½½
 #Before using install MODIStsp, please double check your R version and if the "raster" package is the newest version.
-MODIStsp °üÌá¹©ÁËGUI½çÃæ£¬¿ÉÒÔ·½±ãÏÂÔØMODISÓ°Ïñ
-https://docs.ropensci.org/MODIStsp/ Ìá¹©ÁË½Ì³Ì
+MODIStsp åŒ…æä¾›äº†GUIç•Œé¢ï¼Œå¯ä»¥æ–¹ä¾¿ä¸‹è½½MODISå½±åƒ
+https://docs.ropensci.org/MODIStsp/ æä¾›äº†æ•™ç¨‹
 
 
 ```{r}
@@ -23,21 +23,26 @@ MODIStsp()
 ```
 
 
-## Method2:ÍøÕ¾ÏÂÔØhttps://lpdaacsvc.cr.usgs.gov/appeears/
-Õâ¸öÍøÕ¾¿ÉÒÔÉÏ´«×Ô¶¨Òå±ß½ç£¬¸ù¾İĞèÇóÍê³ÉÌáÈ¡Ö¸¶¨Í¼²ã¡¢×ªÍ¶Ó°¡¢Æ´½ÓÖ±½ÓÏÂÔØtifÎÄ¼ş
-!!!!!´Ë·½·¨Ç¿ÁÒÍÆ¼ö
+## Method2:ç½‘ç«™ä¸‹è½½https://lpdaacsvc.cr.usgs.gov/appeears/
+è¿™ä¸ªç½‘ç«™å¯ä»¥ä¸Šä¼ è‡ªå®šä¹‰è¾¹ç•Œï¼Œæ ¹æ®éœ€æ±‚å®Œæˆæå–æŒ‡å®šå›¾å±‚ã€è½¬æŠ•å½±ã€æ‹¼æ¥ç›´æ¥ä¸‹è½½tifæ–‡ä»¶
+!!!!!æ­¤æ–¹æ³•å¼ºçƒˆæ¨è
 
 
-## Method3£ºhttps://search.earthdata.nasa.gov/search
-Õâ¸öÍøÕ¾ÏÂÔØµÄÊÇÎ´¾­´¦ÀíµÄhdf£¬ĞèÒª×Ô¼º½øĞĞÆ´½Ó¡¢×ªÍ¶Ó°¡¢×ªtifµÈ²Ù×÷
-¿ÉÒÔÍ¨¹ıÌá¹©µÄ´úÂëÅúÁ¿ÏÂÔØ£¬¶ÔÓÚwindowsÏµÍ³ĞèÒªÏÂÔØCygwinµÈÀàUNIXÄ£Äâ»·¾³(CygwinÏÂÔØµØÖ·£ºhttps://www.cygwin.com/) °²×°½Ì³Ì£ºhttps://www.linuxidc.com/Linux/2019-02/156968.htm
-ÏÂÔØÍøÕ¾Ìá¹©µÄ´úÂë£¬½«´úÂëÎÄ¼ş·ÅÖÃÓÚÄ¿±êÎÄ¼ş¼Ğ£¬²¢½«´úÂëÎÄ¼şÖØÃüÃûÎª"download.sh"
-ÔÚCygwin½çÃæÏÂ²Ù×÷:
-cd %ÏÂÔØÄ¿±êÎÄ¼ş¼Ğ£¬Ò²¾ÍÊÇdownload.shËùÔÚÎÄ¼ş¼Ğ%
-ÊäÈë"chmod 777 download.sh"
-ÔÙÊäÈë"./download.sh"
+## Method3ï¼šhttps://search.earthdata.nasa.gov/search
+è¿™ä¸ªç½‘ç«™ä¸‹è½½çš„æ˜¯æœªç»å¤„ç†çš„hdfï¼Œéœ€è¦è‡ªå·±è¿›è¡Œæ‹¼æ¥ã€è½¬æŠ•å½±ã€è½¬tifç­‰æ“ä½œ
+å¯ä»¥é€šè¿‡æä¾›çš„ä»£ç æ‰¹é‡ä¸‹è½½ï¼Œå¯¹äºwindowsç³»ç»Ÿéœ€è¦ä¸‹è½½Cygwinç­‰ç±»UNIXæ¨¡æ‹Ÿç¯å¢ƒ(Cygwinä¸‹è½½åœ°å€ï¼šhttps://www.cygwin.com/) å®‰è£…æ•™ç¨‹ï¼šhttps://www.linuxidc.com/Linux/2019-02/156968.htm
+ä¸‹è½½ç½‘ç«™æä¾›çš„ä»£ç ï¼Œå°†ä»£ç æ–‡ä»¶æ”¾ç½®äºç›®æ ‡æ–‡ä»¶å¤¹ï¼Œå¹¶å°†ä»£ç æ–‡ä»¶é‡å‘½åä¸º"download.sh"
+åœ¨Cygwinç•Œé¢ä¸‹æ“ä½œ:
+cd %ä¸‹è½½ç›®æ ‡æ–‡ä»¶å¤¹ï¼Œä¹Ÿå°±æ˜¯download.shæ‰€åœ¨æ–‡ä»¶å¤¹%
+è¾“å…¥"chmod 777 download.sh"
+å†è¾“å…¥"./download.sh"
 
-Èç¹ûÏÂÔØ½Ï¶àÊı¾İ£¬½¨Òé·ÖÅúÏÂÔØ
+å¦‚æœä¸‹è½½è¾ƒå¤šæ•°æ®ï¼Œå»ºè®®åˆ†æ‰¹ä¸‹è½½
 
-
+Tips for install Cygwin::
+download setup-x86_64.exe
+install from Internet
+Direct Connection
+å¦‚æœé•œåƒä¸èƒ½è‡ªåŠ¨åŠ è½½å‡ºæ¥ï¼Œæ‰‹åŠ¨è¾“å…¥å³å¯
+é•œåƒï¼šhttp://mirrors.163.com/cygwin/
 
