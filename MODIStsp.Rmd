@@ -1,0 +1,43 @@
+---
+title: "MODIStsp_use"
+author: "QIU Sijing"
+date: "2020年9月8日"
+output: html_document
+---
+Any MODIS data can be obtained data access and official document by this website: 
+https://modis.gsfc.nasa.gov/data/
+
+Here are some convenient way to download and pre-processing data:
+
+##Method1：利用R MODIStsp包的GUI界面下载
+#Before using install MODIStsp, please double check your R version and if the "raster" package is the newest version.
+MODIStsp 包提供了GUI界面，可以方便下载MODIS影像
+https://docs.ropensci.org/MODIStsp/ 提供了教程
+
+
+```{r}
+install.packages(raster) ##please make sure your version raster >= 3.5.13
+install.packages(MODIStsp)
+library(MODIStsp)
+MODIStsp()
+```
+
+
+## Method2:网站下载https://lpdaacsvc.cr.usgs.gov/appeears/
+这个网站可以上传自定义边界，根据需求完成提取指定图层、转投影、拼接直接下载tif文件
+!!!!!此方法强烈推荐
+
+
+## Method3：https://search.earthdata.nasa.gov/search
+这个网站下载的是未经处理的hdf，需要自己进行拼接、转投影、转tif等操作
+可以通过提供的代码批量下载，对于windows系统需要下载Cygwin等类UNIX模拟环境(Cygwin下载地址：https://www.cygwin.com/) 安装教程：https://www.linuxidc.com/Linux/2019-02/156968.htm
+下载网站提供的代码，将代码文件放置于目标文件夹，并将代码文件重命名为"download.sh"
+在Cygwin界面下操作:
+cd %下载目标文件夹，也就是download.sh所在文件夹%
+输入"chmod 777 download.sh"
+再输入"./download.sh"
+
+如果下载较多数据，建议分批下载
+
+
+
