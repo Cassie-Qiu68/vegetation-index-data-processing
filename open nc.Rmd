@@ -1,0 +1,84 @@
+---
+title: "process .nc data"
+author: "QIU Sijing"
+date: "2020Äê9ÔÂ15ÈÕ"
+output: html_document
+---
+
+```{r}
+rm(list=ls())
+```
+
+##  
+
+```{r}
+# install.packages("ncdf4")
+library(ncdf4)
+library(raster)
+# install.packages("rasterVis")
+library(rasterVis)
+library(lattice)
+# install.packages("rgdal")
+library(rgdal)
+```
+
+## 1.import raster data 
+get var names
+
+```{r}
+# setwd("I:\Dataset\scPDSI")
+
+input_nc = "D:\\DATASET\\scPDSI.nc" # open .nc
+# names_nc <- names(input_nc$var)
+varname = "scpdsi"
+
+raster1 = stack(input_nc,varname = varname)
+
+```
+
+
+## 2. outpath set
+
+```{r}
+outpath <- "D:/DATASET/PDSI"
+
+##prepare for out file names
+x1 <- c(1:12)
+
+###how to solve it by using circulation???
+x2 <- paste("1999", x1, sep = "")
+x3 <- paste("2000", x1, sep = "")
+x4 <- paste("2001", x1, sep = "")
+x5 <- paste("2002", x1, sep = "")
+x6 <- paste("2003", x1, sep = "")
+x7 <- paste("2004", x1, sep = "")
+x8 <- paste("2005", x1, sep = "")
+x9 <- paste("2006", x1, sep = "")
+x10 <- paste("2007", x1, sep = "")
+x11 <- paste("2008", x1, sep = "")
+x12 <- paste("2009", x1, sep = "")
+x13 <- paste("2010", x1, sep = "")
+x14 <- paste("2011", x1, sep = "")
+x15 <- paste("2012", x1, sep = "")
+x16 <- paste("2013", x1, sep = "")
+x17 <- paste("2014", x1, sep = "")
+x18 <- paste("2015", x1, sep = "")
+x19 <- paste("2016", x1, sep = "")
+x20 <- paste("2017", x1, sep = "")
+x21 <- paste("2018", x1, sep = "")
+
+x22 <- c(x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12,x13,x14,x15,x16,x17,x18,x19,x20,x21)
+
+out_filename <- sapply(x22,function(x)paste(x,".tif",sep="")) # output tif 
+out_path <- sapply(out_filename,function(x){
+  paste(outpath,x,sep = "/")
+})
+# for (i in 1999:2018)
+#   x[i] <- paste("i",x1,sep="")
+
+for (i in 1177:1416){
+  k=i-1176
+  writeRaster(raster1[[i]],out_path[[k]],format="GTiff",overwrite=TRUE)
+}
+
+```
